@@ -1,15 +1,15 @@
 {
-  "name": "ngx-perfect-scrollbar",
+  "name": "@farmarcas/ngx-perfect-scrollbar",
   "description": "Angular wrapper library for Perfect Scrollbar",
   "bugs": "https://github.com/zefoy/ngx-perfect-scrollbar/issues",
-  "version": "10.1.0",
+  "version": "10.1.1",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zefoy/ngx-perfect-scrollbar.git"
   },
   "dependencies": {
-    "perfect-scrollbar": "1.5.0",
+    "@farmarcas/perfect-scrollbar": "^1.5.2",
     "resize-observer-polyfill": "^1.5.0"
   },
   "peerDependencies": {

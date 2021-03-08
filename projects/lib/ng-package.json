@@ -4,12 +4,12 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "perfect-scrollbar": "PerfectScrollbar",
+      "@farmarcas/perfect-scrollbar": "PerfectScrollbar",
       "resize-observer-polyfill": "ResizeObserver"
     }
   },
   "whitelistedNonPeerDependencies": [
-    "perfect-scrollbar",
+    "@farmarcas/perfect-scrollbar",
     "resize-observer-polyfill"
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "name": "ngx-perfect-scrollbar",
+  "name": "@farmarcas/ngx-perfect-scrollbar",
   "description": "Angular wrapper library for Perfect Scrollbar",
-  "bugs": "https://github.com/zefoy/ngx-perfect-scrollbar/issues",
-  "version": "10.1.0",
+  "bugs": "https://github.com/farmarcas/ngx-perfect-scrollbar/issues",
+  "version": "10.1.1",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -23,20 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zefoy/ngx-perfect-scrollbar.git"
-  },
-  "config": {
-    "deployToGit": {
-      "repository": "git@github.com:zefoy/ngx-perfect-scrollbar.git",
-      "branch": "gh-pages",
-      "folder": "dist/app",
-      "script": "ng build app --prod -- --base-href=ngx-perfect-scrollbar --delete-output-path=false",
-      "commit": "Publishing $npm_package_version",
-      "user": {
-        "name": "ZEF Devel",
-        "email": "devel@zef.fi"
-      }
-    }
+    "url": "https://github.com/farmarcas/ngx-perfect-scrollbar.git"
   },
   "dependencies": {
     "@angular/cdk": "^10.0.0",
@@ -46,8 +33,8 @@
     "@angular/flex-layout": "10.0.0-beta.32",
     "@angular/platform-browser": "^10.0.0",
     "@angular/platform-browser-dynamic": "^10.0.0",
-    "perfect-scrollbar": "^1.5.0",
-    "resize-observer-polyfill": "^1.5.0"
+    "@farmarcas/perfect-scrollbar": "^1.5.2",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1000.0",
