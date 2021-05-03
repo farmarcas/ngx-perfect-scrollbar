@@ -1,6 +1,8 @@
-import { InjectionToken } from '@angular/core';
+import { InjectionToken } from "@angular/core";
 
-export const PERFECT_SCROLLBAR_CONFIG = new InjectionToken('PERFECT_SCROLLBAR_CONFIG');
+export const PERFECT_SCROLLBAR_CONFIG = new InjectionToken(
+  "PERFECT_SCROLLBAR_CONFIG"
+);
 
 export class Geometry {
   public x: number;
@@ -18,31 +20,40 @@ export class Geometry {
 }
 
 export class Position {
-  public x: number | 'start' | 'end';
-  public y: number | 'start' | 'end';
+  public x: number | "start" | "end";
+  public y: number | "start" | "end";
 
-  constructor(x: number | 'start' | 'end', y: number | 'start' | 'end') {
+  constructor(x: number | "start" | "end", y: number | "start" | "end") {
     this.x = x;
     this.y = y;
   }
 }
 
-export type PerfectScrollbarEvent = 'psScrollY' | 'psScrollX' | 'psScrollUp'| 'psScrollDown' |
-  'psScrollLeft' | 'psScrollRight' | 'psYReachEnd' | 'psYReachStart' | 'psXReachEnd' | 'psXReachStart';
+export type PerfectScrollbarEvent =
+  | "psScrollY"
+  | "psScrollX"
+  | "psScrollUp"
+  | "psScrollDown"
+  | "psScrollLeft"
+  | "psScrollRight"
+  | "psYReachEnd"
+  | "psYReachStart"
+  | "psXReachEnd"
+  | "psXReachStart";
 
 export const PerfectScrollbarEvents: PerfectScrollbarEvent[] = [
-  'psScrollY',
-  'psScrollX',
+  "psScrollY",
+  "psScrollX",
 
-  'psScrollUp',
-  'psScrollDown',
-  'psScrollLeft',
-  'psScrollRight',
+  "psScrollUp",
+  "psScrollDown",
+  "psScrollLeft",
+  "psScrollRight",
 
-  'psYReachEnd',
-  'psYReachStart',
-  'psXReachEnd',
-  'psXReachStart'
+  "psYReachEnd",
+  "psYReachStart",
+  "psXReachEnd",
+  "psXReachStart",
 ];
 
 export interface PerfectScrollbarConfigInterface {
@@ -92,7 +103,16 @@ export class PerfectScrollbarConfig implements PerfectScrollbarConfigInterface {
 
   public assign(config: PerfectScrollbarConfigInterface = {}) {
     for (const key in config) {
-      this[key as keyof PerfectScrollbarConfig] = config[key as keyof PerfectScrollbarConfigInterface] as never;
+      this[key as keyof PerfectScrollbarConfig] = config[
+        key as keyof PerfectScrollbarConfigInterface
+      ] as never;
     }
   }
+}
+
+export interface PerfectScrollbarListener {
+  element: Element;
+
+  type: PerfectScrollbarEvent;
+  event: any;
 }

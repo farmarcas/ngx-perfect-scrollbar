@@ -1,13 +1,6 @@
-import PerfectScrollbar from "@farmarcas/perfect-scrollbar";
-
-import ResizeObserver from "resize-observer-polyfill";
-
-import { Subject, fromEvent } from "rxjs";
-import { auditTime, takeUntil } from "rxjs/operators";
-
-import { PLATFORM_ID } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import {
+  PLATFORM_ID,
   NgZone,
   Inject,
   Optional,
@@ -25,15 +18,23 @@ import {
   KeyValueDiffers,
 } from "@angular/core";
 
-import { Geometry, Position } from "./perfect-scrollbar.interfaces";
+import { Subject, fromEvent } from "rxjs";
+import { auditTime, takeUntil } from "rxjs/operators";
+
+import PerfectScrollbar from "@farmarcas/perfect-scrollbar";
+
+import ResizeObserver from "resize-observer-polyfill";
 
 import {
+  Geometry,
+  Position,
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfig,
   PerfectScrollbarConfigInterface,
   PerfectScrollbarEvent,
   PerfectScrollbarEvents,
 } from "./perfect-scrollbar.interfaces";
+import { PerfectScrollbarService } from "./perfect-scrollbar.service";
 
 @Directive({
   selector: "[perfectScrollbar]",
@@ -72,6 +73,7 @@ export class PerfectScrollbarDirective
   constructor(
     private zone: NgZone,
     private differs: KeyValueDiffers,
+    private service: PerfectScrollbarService,
     public elementRef: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Optional()
@@ -121,6 +123,12 @@ export class PerfectScrollbarDirective
             .pipe(auditTime(20), takeUntil(this.ngDestroy))
             .subscribe((event: Event) => {
               this[eventName].emit(event);
+
+              this.service.listenerSubject.next({
+                event,
+                type: eventName,
+                element: this.elementRef.nativeElement,
+              });
             });
         });
       });

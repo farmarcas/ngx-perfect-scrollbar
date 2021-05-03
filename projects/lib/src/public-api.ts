@@ -1,14 +1,15 @@
-export { PerfectScrollbarComponent } from './lib/perfect-scrollbar.component';
-export { PerfectScrollbarDirective } from './lib/perfect-scrollbar.directive';
+export { PerfectScrollbarComponent } from "./lib/perfect-scrollbar.component";
+export { PerfectScrollbarDirective } from "./lib/perfect-scrollbar.directive";
 
 export {
   Geometry,
   Position,
-
   PERFECT_SCROLLBAR_CONFIG,
-
   PerfectScrollbarConfig,
-  PerfectScrollbarConfigInterface
-} from './lib/perfect-scrollbar.interfaces';
+  PerfectScrollbarConfigInterface,
+  PerfectScrollbarListener,
+  PerfectScrollbarEvent,
+} from "./lib/perfect-scrollbar.interfaces";
 
-export { PerfectScrollbarModule } from './lib/perfect-scrollbar.module';
+export { PerfectScrollbarModule } from "./lib/perfect-scrollbar.module";
+export { PerfectScrollbarService } from "./lib/perfect-scrollbar.service";

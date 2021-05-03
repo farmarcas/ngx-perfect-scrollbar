@@ -1,6 +1,3 @@
-import { Subject, merge, fromEvent } from "rxjs";
-import { mapTo, takeUntil, distinctUntilChanged } from "rxjs/operators";
-
 import { PLATFORM_ID } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import {
@@ -18,6 +15,9 @@ import {
   ViewEncapsulation,
   ChangeDetectorRef,
 } from "@angular/core";
+
+import { Subject, merge, fromEvent } from "rxjs";
+import { mapTo, takeUntil, distinctUntilChanged } from "rxjs/operators";
 
 import { PerfectScrollbarDirective } from "./perfect-scrollbar.directive";
 
