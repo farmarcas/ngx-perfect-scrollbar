@@ -8,7 +8,7 @@
       "resize-observer-polyfill": "ResizeObserver"
     }
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "@farmarcas/perfect-scrollbar",
     "resize-observer-polyfill"
   ]

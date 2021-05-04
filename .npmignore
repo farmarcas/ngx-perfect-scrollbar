@@ -12,3 +12,4 @@ node_modules/
 tslint.json
 tsconfig.json
 stylelint.json
+yarn.lock
